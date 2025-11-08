@@ -1,0 +1,55 @@
+{
+  "name": "AtCoder Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": "true",
+      "installOhMyZsh": "true",
+      "installOhMyZshConfig": "true"
+    }
+  },
+  "remoteUser": "vscode",
+  "containerEnv": {
+    "TZ": "Asia/Tokyo"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "editor.formatOnSave": true,
+        "[python]": {
+          "editor.defaultFormatter": "ms-python.black-formatter",
+          "editor.formatOnSave": true,
+          "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+          }
+        },
+        "python.analysis.autoFormatStrings": true,
+        "python.analysis.autoImportCompletions": true,
+        "python.analysis.completeFunctionParens": true,
+        "black-formatter.args": [
+          "--line-length=88"
+        ],
+        "isort.args": [
+          "--profile",
+          "black"
+        ]
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.black-formatter",
+        "ms-python.flake8",
+        "ms-python.isort",
+        "ms-python.vscode-pylance",
+        "ms-python.mypy-type-checker",
+        "ms-python.debugpy",
+        "ms-python.vscode-python-envs",
+        "njpwerner.autodocstring"
+      ]
+    }
+  },
+  "postCreateCommand": "echo 'Dev container ready'",
+  "forwardPorts": []
+}
