@@ -29,6 +29,9 @@
         "python.analysis.autoFormatStrings": true,
         "python.analysis.autoImportCompletions": true,
         "python.analysis.completeFunctionParens": true,
+        "flake8.args": [
+          "--max-line-length=88"
+        ],
         "black-formatter.args": [
           "--line-length=88"
         ],
