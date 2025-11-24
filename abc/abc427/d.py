@@ -49,6 +49,23 @@ def solve2(N, M, K, S, G):
     return ans
 
 
+def solve3(N, M, K, S, G):
+
+    @cache
+    def dfs(i=0, u=0):
+        if i == 2 * K:
+            return int(S[u] == "A") * 2 - 1
+
+        target = -1 if i & 1 else 1
+        result = target if any(dfs(i + 1, v) == target for v in G[u]) else -target
+
+        return result
+
+    ans = "Alice" if dfs() == 1 else "Bob"
+
+    return ans
+
+
 def main():
     T = int(input())
     ans = []
@@ -61,7 +78,7 @@ def main():
             u -= 1
             v -= 1
             G[u].append(v)
-        x = solve2(N, M, K, S, G)
+        x = solve3(N, M, K, S, G)
         ans.append(x)
     print(*ans)
 
