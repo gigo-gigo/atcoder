@@ -1,9 +1,10 @@
+from itertools import accumulate
 from operator import add
 
 from atcoder.segtree import SegTree
 
 
-def solve(N, A, queries):
+def solve1(N, A, queries):
     seg = SegTree(add, 0, A)
     top = 0
 
@@ -24,6 +25,23 @@ def solve(N, A, queries):
     return ans
 
 
+def solve2(N, A, queries):
+    AA = A + A[:-1]
+    accAA = list(accumulate(AA, initial=0))
+    top = 0
+
+    ans = []
+    for c, left, right in queries:
+        if c == 1:
+            top += left
+            top %= N
+        else:
+            x = accAA[top + right] - accAA[top + left]
+            ans.append(x)
+
+    return ans
+
+
 def main():
     N, Q = map(int, input().split())
     A = list(map(int, input().split()))
@@ -37,7 +55,7 @@ def main():
             left, right = X[:2]
             left -= 1
         queries.append((c, left, right))
-    ans = solve(N, A, queries)
+    ans = solve2(N, A, queries)
     print(*ans)
 
 
