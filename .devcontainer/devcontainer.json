@@ -53,5 +53,6 @@
       ]
     }
   },
+  "postCreateCommand": "uv sync",
   "forwardPorts": []
 }
