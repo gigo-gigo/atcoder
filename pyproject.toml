@@ -25,7 +25,7 @@ dependencies = [
     "shapely==2.0.0",
     "sortedcontainers==2.4.0",
     "sympy==1.11.1",
-    "torch==1.13.1",
+    "torch==2.8.0",
     "z3-solver==4.12.1.0",
 ]
 
