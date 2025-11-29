@@ -19,7 +19,7 @@ dependencies = [
     "pandas==1.5.2",
     "polars==0.15.15",
     "pulp==2.7.0",
-    "scikit-learn==1.2.0",
+    "scikit-learn==1.5.0",
     "scipy==1.10.1",
     "setuptools==66.0.0",
     "shapely==2.0.0",
