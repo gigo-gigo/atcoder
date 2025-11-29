@@ -80,7 +80,7 @@ scipy==1.10.1
     #   atcoder (pyproject.toml)
     #   lightgbm
     #   scikit-learn
-setuptools==66.0.0
+setuptools==78.1.1
     # via
     #   atcoder (pyproject.toml)
     #   nvidia-cublas-cu11
