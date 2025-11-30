@@ -26,6 +26,7 @@
             "source.organizeImports": "explicit"
           }
         },
+        "python.defaultInterpreterPath": "/app/.venv/bin/python",
         "python.analysis.autoFormatStrings": true,
         "python.analysis.autoImportCompletions": true,
         "python.analysis.completeFunctionParens": true,
@@ -53,6 +54,5 @@
       ]
     }
   },
-  "postCreateCommand": "uv sync",
   "forwardPorts": []
 }
