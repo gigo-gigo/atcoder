@@ -3,8 +3,8 @@ def solve(N, H, A):
     l0 = H
     u0 = H
     for t1, l1, u1 in A:
-        l = max(max(0, l0 - (t1 - t0)), l1)
-        u = min(max(0, u0 + (t1 - t0)), u1)
+        l = max(l0 - (t1 - t0), l1)
+        u = min(u0 + (t1 - t0), u1)
         l0 = l
         u0 = u
         t0 = t1
