@@ -23,7 +23,7 @@ gmpy2==2.1.5
     # via atcoder (pyproject.toml)
 joblib==1.5.2
     # via scikit-learn
-lightgbm==3.3.1
+lightgbm==4.6.0
     # via atcoder (pyproject.toml)
 llvmlite==0.40.1
     # via numba

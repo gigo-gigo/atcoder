@@ -9,7 +9,7 @@ dependencies = [
     "bitarray==2.6.2",
     "cppyy==2.4.1",
     "gmpy2==2.1.5",
-    "lightgbm==3.3.1",
+    "lightgbm==4.6.0",
     "more-itertools==9.0.0",
     "mpmath==1.2.1",
     "networkx==3.0",
