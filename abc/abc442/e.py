@@ -27,7 +27,7 @@ def solve(N, X, Y, A, B):
 
     D = defaultdict(list)
     for i, (x, y) in enumerate(zip(X, Y)):
-        if x >= 0 and y <= 0:
+        if x >= 0:
             D[(x, y)].append(i)
     for key in sorted(
         D.keys(),
@@ -39,31 +39,7 @@ def solve(N, X, Y, A, B):
 
     D = defaultdict(list)
     for i, (x, y) in enumerate(zip(X, Y)):
-        if x < 0 and y <= 0:
-            D[(x, y)].append(i)
-    for key in sorted(
-        D.keys(),
-        key=cmp_to_key(lambda a, b: 1 if a[1] * b[0] < a[0] * b[1] else -1),
-    ):
-        for i in D[key]:
-            i2n[i] = len(Z)
-        Z.append(len(D[key]))
-
-    D = defaultdict(list)
-    for i, (x, y) in enumerate(zip(X, Y)):
-        if x < 0 and y > 0:
-            D[(x, y)].append(i)
-    for key in sorted(
-        D.keys(),
-        key=cmp_to_key(lambda a, b: 1 if a[1] * b[0] < a[0] * b[1] else -1),
-    ):
-        for i in D[key]:
-            i2n[i] = len(Z)
-        Z.append(len(D[key]))
-
-    D = defaultdict(list)
-    for i, (x, y) in enumerate(zip(X, Y)):
-        if x >= 0 and y > 0:
+        if x < 0:
             D[(x, y)].append(i)
     for key in sorted(
         D.keys(),
