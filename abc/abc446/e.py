@@ -7,6 +7,9 @@ def solve(m, a, b):
     def dfs(u):
         if used[u]:
             return X[u]
+        if X[u]:
+            used[u] = True
+            return X[u]
 
         used[u] = True
         X[u] |= dfs(A[u])
@@ -27,11 +30,6 @@ def solve(m, a, b):
             u = y * m + x
             if x % m == 0 or y % m == 0:
                 X[u] = True
-    for x in range(m):
-        for y in range(m):
-            u = y * m + x
-            v = A[u]
-            X[u] |= X[v]
 
     used = [False] * (m * m)
     for x in range(m):
