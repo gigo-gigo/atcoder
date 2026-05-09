@@ -4,13 +4,6 @@
     "dockerfile": "Dockerfile",
     "context": ".."
   },
-  "features": {
-    "ghcr.io/devcontainers/features/common-utils:2": {
-      "installZsh": "true",
-      "installOhMyZsh": "true",
-      "installOhMyZshConfig": "true"
-    }
-  },
   "containerEnv": {
     "TZ": "Asia/Tokyo"
   },
@@ -20,37 +13,29 @@
         "terminal.integrated.defaultProfile.linux": "zsh",
         "editor.formatOnSave": true,
         "[python]": {
-          "editor.defaultFormatter": "ms-python.black-formatter",
+          "editor.defaultFormatter": "charliermarsh.ruff",
           "editor.formatOnSave": true,
           "editor.codeActionsOnSave": {
+            // "source.fixAll": "explicit",
             "source.organizeImports": "explicit"
           }
         },
         "python.defaultInterpreterPath": "/app/.venv/bin/python",
         "python.analysis.autoFormatStrings": true,
         "python.analysis.autoImportCompletions": true,
-        "python.analysis.completeFunctionParens": true,
-        "flake8.args": [
-          "--max-line-length=88"
-        ],
-        "black-formatter.args": [
-          "--line-length=88"
-        ],
-        "isort.args": [
-          "--profile",
-          "black"
-        ]
+        "python.analysis.completeFunctionParens": true
       },
       "extensions": [
         "ms-python.python",
-        "ms-python.black-formatter",
-        "ms-python.flake8",
-        "ms-python.isort",
+        // "ms-python.black-formatter",
+        // "ms-python.flake8",
+        // "ms-python.isort",
         "ms-python.vscode-pylance",
         "ms-python.mypy-type-checker",
         "ms-python.debugpy",
         "ms-python.vscode-python-envs",
-        "njpwerner.autodocstring"
+        "njpwerner.autodocstring",
+        "charliermarsh.ruff"
       ]
     }
   },
